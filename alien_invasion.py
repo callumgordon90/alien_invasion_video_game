@@ -5,16 +5,15 @@ from ship import Ship
 
 class AlienInvasion:
     """Overall class to manage game assets and behaviour"""
-
     def __init__(self):
         """Initialise the game, and create game resources."""
         pygame.init()
         self.settings = Settings()
 
-        # self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
+        self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
         
-        info = pygame.display.Info()
-        self.screen = pygame.display.set_mode((info.current_w, info.current_h),pygame.NOFRAME)
+        # info = pygame.display.Info()
+        # self.screen = pygame.display.set_mode((info.current_w, info.current_h),pygame.NOFRAME)
 
         pygame.display.set_caption("Alien Invasion")
 
