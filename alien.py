@@ -4,14 +4,18 @@ from pygame.sprite import Sprite
 class Alien(Sprite):
     """A class to represent a single alien in the fleet"""
 
-    def _init_(self, ai_game):
+    def __init__(self, ai_game):
         """Initialise the alioen and set its starting position"""
         super().__init__()
         self.screen = ai_game.screen
 
         #Load the alien image and set its rect attribute:
         self.image = pygame.image.load('images/alien.bmp')
-        self.rect = self.image.get_rect()
+        #IMPORTANT: ADJUST THE SIZE OF THE ALIEN:
+        self.image = pygame.transform.scale(self.image, (100, 100))
+
+        self.rect = self.image.get_rect()  # <- get rect AFTER resizing
+
 
         #Start each new alien near the top left of the screen. 
         self.rect.x = self.rect.width
@@ -19,4 +23,4 @@ class Alien(Sprite):
 
         #Store the alien's exact horizontal position.
         self.x = float(self.rect.x)
-        
+
