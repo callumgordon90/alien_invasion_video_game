@@ -19,6 +19,9 @@ class AlienInvasion:
         #Importing the ship into the main game:
         self.ship = Ship(self)
 
+        #Bullets group:
+        self.bullets = pygame.sprite.Group()
+
         #Set the background colour.
         self.bg_color = (230, 230, 230)
 
@@ -28,6 +31,7 @@ class AlienInvasion:
             #Call helper functions:
             self._check_events()
             self.ship.update()
+            self.bullets.update()
             self._update_screen()
 
 
