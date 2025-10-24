@@ -4,6 +4,7 @@ import pygame
 
 from settings import Settings
 from game_stats import GameStats
+from button import Button
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
@@ -24,20 +25,18 @@ class AlienInvasion:
 
         #Create an instance to store game statistics.
         self.stats = GameStats(self)
-
         #Importing the ship into the main game:
         self.ship = Ship(self)
-
         #Bullets group:
         self.bullets = pygame.sprite.Group()
-
         #Import the alien(s)
         self.aliens = pygame.sprite.Group()
         #Method to create an alien fleet:
         self._create_fleet()
-
         #Set the background colour.
         self.bg_color = (230, 230, 230)
+        #Make the play button:
+        self.play_button = Button(self, "play")
 
     def run_game(self): 
         """Start the main loop for the game."""
@@ -215,6 +214,10 @@ class AlienInvasion:
             bullet.draw_bullet()
         #draw the aliens on the screen:
         self.aliens.draw(self.screen)
+
+        #Draw the play button if the game is inactive:
+        if not self.stats.game_active:
+            self.play_button.draw_button()
 
         # Make the most recently drawn screen visable.
         pygame.display.flip()
