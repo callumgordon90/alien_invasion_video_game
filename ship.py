@@ -11,9 +11,9 @@ class Ship(Sprite):
         self.settings = ai_game.settings
 
         #Load the ship image to get its rectangle.
-        self.image = pygame.image.load('images/ship.bmp')
+        self.image = pygame.image.load('images/malarky1.bmp')
         #Adjust the size of the ship: 
-        self.image = pygame.transform.scale(self.image, (100, 100))
+        self.image = pygame.transform.scale(self.image, (120, 120))
         #create the ship rectangle
         self.rect = self.image.get_rect()
 

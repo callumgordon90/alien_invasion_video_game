@@ -38,7 +38,7 @@ class AlienInvasion:
         #Set the background colour.
         self.bg_color = (230, 230, 230)
         #Make the play button:
-        self.play_button = Button(self, "play")
+        self.play_button = Button(self, "Welcome to Malarkey's hijinks. press PLAY for a mediocre time. ")
 
     def run_game(self): 
         """Start the main loop for the game."""

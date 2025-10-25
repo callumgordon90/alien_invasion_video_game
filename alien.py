@@ -11,9 +11,9 @@ class Alien(Sprite):
         self.settings = ai_game.settings
 
         #Load the alien image and set its rect attribute:
-        self.image = pygame.image.load('images/alien.bmp')
+        self.image = pygame.image.load('images/malarky2.bmp')
         #IMPORTANT: ADJUST THE SIZE OF THE ALIEN:
-        self.image = pygame.transform.scale(self.image, (60, 60))
+        self.image = pygame.transform.scale(self.image, (70, 70))
 
         self.rect = self.image.get_rect()  # <- get rect AFTER resizing
 
